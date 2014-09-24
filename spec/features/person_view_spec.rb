@@ -81,5 +81,14 @@ describe 'the person view', type: :feature do
       page.find('#new_email_address').click
       expect(current_path).to eq(new_email_address_path)
     end
+
+    it 'adds a new email' do
+      new_email = "abc@alphabet.com"
+      page.find('#new_email_address').click
+      page.fill_in('Address', with: new_email)
+      click_button('Create Email address')
+      expect(current_path).to eq(person_path(person))
+      expect(page).to have_content(new_email)
+    end
   end
 end

@@ -24,9 +24,9 @@
 <p>
   <strong>Email Addresses:</strong>
   <ul>
-  <%= @person.email_addresses.each do |email_address| %>
+  <% @person.email_addresses.each do |record| %>
     <li>
-      <%= email_address.address %>
+      <%= record.address %>
     </li>
       <% end %>
   </ul>
