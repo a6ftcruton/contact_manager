@@ -12,6 +12,7 @@ RSpec.describe Person, :type => :model do
     person.first_name = nil
     expect(person).not_to be_valid
   end
+
   it 'is invalid without a last name' do
     person.last_name = nil
     expect(person).not_to be_valid
